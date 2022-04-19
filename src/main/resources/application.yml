@@ -1,0 +1,27 @@
+spring:
+  servlet:
+    multipart:
+      file-size-threshold: 2KB
+      max-file-size: 200MB
+      max-request-size: 215MB
+      enabled: true
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://ec2-23-20-224-166.compute-1.amazonaws.com:5432/das2gfgg4019qc
+    username: ozzhptzqmirncg
+    password: 1e67c449106fd53a5a447110831ed110f5fed81dbcf75381571248b88ccb5e2d
+  data:
+    cassandra:
+      schema-action: create_if_not_exists
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        globally_quoted_identifiers: true
+        enable_lazy_load_no_trans: true
+        dialect: org.hibernate.dialect.PostgreSQL92Dialect
